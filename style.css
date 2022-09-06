@@ -36,6 +36,7 @@ button {
   border: none;
   border-radius: 5px;
   box-shadow: 2px 2px 10px 10px rgba(0, 0, 0, 0.2);
+  filter: brightness(100%);
 }
 
 button:hover {
@@ -44,6 +45,7 @@ button:hover {
 
 button:active {
   transform: scale(0.95);
+  filter: brightness(100%);
 }
 
 button:disabled {
