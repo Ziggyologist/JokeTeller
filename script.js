@@ -1,5 +1,7 @@
 const button = document.getElementById("btn");
 const audioElement = document.getElementById("audio");
+const jokeText = document.querySelector(".jokeText");
+let joke = "";
 
 // Disable enable button
 const toggleButton = function () {
@@ -22,7 +24,6 @@ function tellMe(joke) {
 
 // Joke API
 const getJoke = async function () {
-  let joke = "";
   const apiUrl =
     "https://v2.jokeapi.dev/joke/Programming?blacklistFlags=sexist";
   try {
@@ -34,10 +35,16 @@ const getJoke = async function () {
     tellMe(joke);
     // Disable button
     toggleButton();
+    displayJokeText();
   } catch (e) {
     console.error("God, no, no, nooooo!", e.message);
   }
 };
+
+function displayJokeText() {
+  const html = `${joke}`;
+  jokeText.innerHTML = joke;
+}
 
 // Event Listeners
 audioElement.addEventListener("ended", toggleButton);

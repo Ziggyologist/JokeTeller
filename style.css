@@ -5,6 +5,7 @@ html,
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: "Courier-New", "Courier", monospace;
 }
 
 img {
@@ -32,7 +33,7 @@ button {
   font-family: "Courier-New", "Courier", monospace;
   color: white;
   font-size: 18px;
-  background: rgb(255, 146, 164);
+  background: rgb(202, 121, 135);
   border: none;
   border-radius: 5px;
   box-shadow: 2px 2px 10px 10px rgba(0, 0, 0, 0.2);
@@ -53,6 +54,36 @@ button:disabled {
   filter: brightness(25%);
 }
 
+footer {
+  position: absolute;
+  font-size: 0.8rem;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(218, 216, 216, 0.397);
+}
+
+details {
+  text-align: center;
+  background-color: rgba(128, 128, 128, 0.39);
+  border-radius: 4px;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  max-width: 30%;
+}
+
+details p {
+  padding: 1rem 2rem 1rem 2rem;
+}
+summary {
+  font-size: 0.8rem;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+}
+summary:hover {
+  cursor: pointer;
+}
+
 /* Media query: tablet or smaller */
 @media screen and (max-width: 1000px) {
   .main_container {
@@ -61,5 +92,9 @@ button:disabled {
   }
   button {
     box-shadow: 5px 5px 20px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  details {
+    max-width: 90%;
   }
 }
