@@ -84,6 +84,11 @@ summary:hover {
   cursor: pointer;
 }
 
+details:active {
+  filter: brightness(40%);
+  transform: scale(0.95);
+}
+
 /* Media query: tablet or smaller */
 @media screen and (max-width: 1000px) {
   .main_container {
