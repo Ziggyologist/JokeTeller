@@ -101,5 +101,6 @@ details:active {
 
   details {
     max-width: 90%;
+    background-color: rgba(128, 128, 128, 0.95);
   }
 }
