@@ -13,6 +13,20 @@ img {
   width: 100%;
 }
 
+:root {
+  --primary-color: rgb(255, 255, 255);
+  --secondary-color: rgb(202, 121, 135);
+  --text-color: rgb(31, 30, 30);
+  --robot: url("rrr.gif");
+}
+
+[data-theme="dark"] {
+  --primary-color: #0f0507;
+  --secondary-color: rgb(161, 73, 73);
+  --text-color: rgb(161, 161, 161);
+  --robot: url("dark_robot.gif");
+}
+
 .main_container {
   display: flex;
   flex-direction: column;
@@ -20,10 +34,13 @@ img {
   width: 100vw;
   align-items: center;
   justify-content: center;
-  background: url("rrr.gif");
+  background: var(--robot);
   background-position: left center;
   background-size: contain;
   background-repeat: no-repeat;
+}
+.bgk_color {
+  background-color: var(--primary-color);
 }
 
 button {
@@ -34,7 +51,7 @@ button {
   font-family: "Courier-New", "Courier", monospace;
   color: white;
   font-size: 18px;
-  background: rgb(202, 121, 135);
+  background: var(--secondary-color);
   border: none;
   border-radius: 5px;
   box-shadow: 2px 2px 10px 10px rgba(0, 0, 0, 0.2);
@@ -90,22 +107,8 @@ details:active {
   transform: scale(0.95);
 }
 
-/* Dark mode stuff */
-.dark_mode_container {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: 100vw;
-  align-items: center;
-  justify-content: center;
-  background: url("dark_robot.gif");
-  background-position: left center;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-.dark_bgk {
-  background-color: #1e2d48;
-}
+/* Dark mode */
+
 .theme_switch_wrapper {
   position: fixed;
   right: 15%;
@@ -120,12 +123,13 @@ details:active {
   margin-right: 10px;
   font-size: 1.2rem;
   font-weight: 600;
+  color: var(--text-color);
 }
 .toggle_text {
   position: relative;
   top: -4px;
   /* right: 5px; */
-  color: black;
+  /* color: black; */
 }
 .theme_switch {
   display: inline-block;

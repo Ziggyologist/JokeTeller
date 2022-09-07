@@ -49,3 +49,29 @@ function displayJokeText() {
 // Event Listeners
 audioElement.addEventListener("ended", toggleButton);
 button.addEventListener("click", getJoke);
+
+// Dark/light mode implementation
+let darkMode = false;
+const toggleSwitch = document.querySelector("input[type='checkbox']");
+const body = document.querySelector("body");
+const mainContainer = document.querySelector(".main_container");
+
+// Switch Theme Dynamically
+
+const switchTheme = function (e) {
+  if (e.target.checked) {
+    document.documentElement.setAttribute("data-theme", "dark");
+  } else {
+    document.documentElement.setAttribute("data-theme", "light");
+  }
+  // e.preventDefault();
+  // darkMode = e.target.checked ? true : false;
+  // console.log(`darkMode is ${darkMode}`);
+  // body.classList.toggle("dark_bgk");
+  // mainContainer.classList.toggle("dark_mode_container");
+  // console.log("changed");
+  // console.log(`darkMode is ${darkMode}`);
+};
+
+// Event Listeners
+toggleSwitch.addEventListener("change", switchTheme);
