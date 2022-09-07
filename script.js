@@ -42,7 +42,6 @@ const getJoke = async function () {
 };
 
 function displayJokeText() {
-  const html = `${joke}`;
   jokeText.innerHTML = joke;
 }
 
@@ -51,26 +50,33 @@ audioElement.addEventListener("ended", toggleButton);
 button.addEventListener("click", getJoke);
 
 // Dark/light mode implementation
-let darkMode = false;
 const toggleSwitch = document.querySelector("input[type='checkbox']");
 const body = document.querySelector("body");
 const mainContainer = document.querySelector(".main_container");
+const toggleIcon = document.querySelector("#toggle_icon");
 
 // Switch Theme Dynamically
+
+const darkMode = function () {
+  console.log(toggleIcon.children);
+  toggleIcon.children[0].textContent = "Dark Mode";
+  toggleIcon.children[1].classList.remove("fa-sun");
+  toggleIcon.children[1].classList.add("fa-moon");
+};
+const lightMode = function () {
+  toggleIcon.children[0].textContent = "Light Mode";
+  toggleIcon.children[1].classList.remove("fa-moon");
+  toggleIcon.children[1].classList.add("fa-sun");
+};
 
 const switchTheme = function (e) {
   if (e.target.checked) {
     document.documentElement.setAttribute("data-theme", "dark");
+    darkMode();
   } else {
     document.documentElement.setAttribute("data-theme", "light");
+    lightMode();
   }
-  // e.preventDefault();
-  // darkMode = e.target.checked ? true : false;
-  // console.log(`darkMode is ${darkMode}`);
-  // body.classList.toggle("dark_bgk");
-  // mainContainer.classList.toggle("dark_mode_container");
-  // console.log("changed");
-  // console.log(`darkMode is ${darkMode}`);
 };
 
 // Event Listeners

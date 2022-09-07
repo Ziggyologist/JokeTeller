@@ -17,6 +17,7 @@ img {
   --primary-color: rgb(255, 255, 255);
   --secondary-color: rgb(202, 121, 135);
   --text-color: rgb(31, 30, 30);
+  --detail-bkg: rgba(196, 196, 196, 0.884);
   --robot: url("rrr.gif");
 }
 
@@ -24,6 +25,7 @@ img {
   --primary-color: #0f0507;
   --secondary-color: rgb(161, 73, 73);
   --text-color: rgb(161, 161, 161);
+  --detail-bkg: rgba(75, 75, 75, 0.884);
   --robot: url("dark_robot.gif");
 }
 
@@ -79,15 +81,17 @@ footer {
   width: 100%;
   text-align: center;
   background-color: rgba(218, 216, 216, 0.397);
+  color: var(--text-color);
 }
 
 details {
   text-align: center;
-  background-color: rgba(128, 128, 128, 0.39);
+  background-color: rgba(26, 26, 26, 0.055);
   border-radius: 4px;
   padding: 0.5rem;
   margin-top: 0.5rem;
   max-width: 30%;
+  color: var(--text-color);
 }
 
 details p {
@@ -115,15 +119,19 @@ details:active {
   top: 0;
   margin-top: 15px;
   z-index: 100;
-  font-size: 1.5rem;
+  font-size: 1rem;
   display: flex;
   align-items: center;
 }
 .theme_switch_wrapper span {
   margin-right: 10px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--text-color);
+}
+
+i {
+  font-size: 2rem;
 }
 .toggle_text {
   position: relative;
@@ -192,6 +200,6 @@ input:checked + .slider::before {
 
   details {
     max-width: 90%;
-    background-color: rgba(128, 128, 128, 0.95);
+    background: var(--detail-bkg);
   }
 }
